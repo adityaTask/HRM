@@ -11,6 +11,7 @@ def setup(request):
     driver = wd.create_driver_instance()
     lp = LoginPage(driver)
     lp.login(username=config.get_username(), password=config.get_password())
+    #not required
     # if request.cls is not None:
     #     request.cls.driver = driver
     yield driver
