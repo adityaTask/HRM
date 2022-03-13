@@ -5,9 +5,9 @@ from Pages.login import LoginPage
 
 
 @pytest.fixture(scope="class")
-def setup(request):
+def setup(request,headless):
     config = ConfigParser()
-    wd = WebDriver(url=config.get_url())
+    wd = WebDriver(url=config.get_url(),head_less=headless)
     driver = wd.create_driver_instance()
     lp = LoginPage(driver)
     lp.login(username=config.get_username(), password=config.get_password())
@@ -16,3 +16,10 @@ def setup(request):
     #     request.cls.driver = driver
     yield driver
     driver.quit()
+
+def pytest_addoption(parser):
+    parser.addoption("--headless")
+
+@pytest.fixture(scope="session")
+def headless(request):
+    return request.config.getoption("--headless")
