@@ -6,7 +6,6 @@ class WebDriver():
         self.browser = browser
         self.url = url
         self.head_less = head_less
-        print("Type of head_less",type(self.head_less),self.head_less)
 
     def create_driver_instance(self):
         '''
