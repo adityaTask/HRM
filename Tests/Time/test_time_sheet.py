@@ -12,6 +12,7 @@ class TimeSheetTest(unittest.TestCase):
     def class_setup(self,setup):
         self.ts = TimeSheet(setup)
 
+    @pytest.mark.skip
     @data(['orange test','Fresh Books Software Ltd - Fresh Books Software Ltd - Phase I','Bug Fixes'])
     @unpack
     def test_time_sheet_submit(self,user,project_name,activity):
