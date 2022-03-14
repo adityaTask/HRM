@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class SeleniumDriver():
@@ -73,3 +74,11 @@ class SeleniumDriver():
         except Exception as e:
             print(e)
 
+    def mouse_hovering(self,locator, locator_type='id'):
+        try:
+            by_type = self.get_by_type(locator_type)
+            element = self.driver.find_element(by_type, locator)
+            action = ActionChains(self.driver)
+            action.move_to_element(element).perform()
+        except Exception as e:
+            print(e)

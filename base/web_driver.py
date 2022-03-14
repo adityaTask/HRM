@@ -13,12 +13,17 @@ class WebDriver():
         Method used to create a driver instance
         '''
         if self.browser == 'Chrome':
+            if self.head_less is None:
+                self.head_less = 'false'
             if self.head_less.lower() == 'true':
                 op = webdriver.ChromeOptions()
                 op.add_argument('headless')
+                op.add_experimental_option('excludeSwitches', ['enable-logging'])
                 driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe", options=op)
             else:
-                driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe")
+                op = webdriver.ChromeOptions()
+                op.add_experimental_option('excludeSwitches', ['enable-logging'])
+                driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe",options=op)
             driver.maximize_window()
             driver.get(url=self.url)
             driver.implicitly_wait(10)
