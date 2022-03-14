@@ -9,6 +9,9 @@ class WebDriver():
         print("Type of head_less",type(self.head_less),self.head_less)
 
     def create_driver_instance(self):
+        '''
+        Method used to create a driver instance
+        '''
         if self.browser == 'Chrome':
             if self.head_less.lower() == 'true':
                 op = webdriver.ChromeOptions()
