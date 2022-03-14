@@ -1,5 +1,5 @@
 import time
-from Pages.login import LoginPage
+from Pages.Login.login import LoginPage
 from base.web_driver import WebDriver
 from configs.config_parser import ConfigParser
 

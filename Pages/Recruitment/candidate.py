@@ -1,12 +1,7 @@
-import time
-from Pages.login import LoginPage
-from base.web_driver import WebDriver
-from configs.config_parser import ConfigParser
-
 from base.selenium_driver import SeleniumDriver
 
 
-class Recruitment(SeleniumDriver):
+class Candidate(SeleniumDriver):
     def __init__(self, driver):
         self.driver = driver
         self.select_recruitment_by_id = 'menu_recruitment_viewRecruitmentModule'
@@ -26,7 +21,7 @@ class Recruitment(SeleniumDriver):
     def navigate_to_recruitment(self):
         self.element_click(self.select_recruitment_by_id)
 
-    def add_recruitment(self, first_name, last_name, email, vacancy='Associate IT Manager'):
+    def add_candidate(self, first_name, last_name, email, vacancy='Associate IT Manager'):
         self.element_click(self.add_recruitment_by_id)
         self.send_keys(first_name, self.add_first_name_by_id)
         self.send_keys(last_name, self.add_last_name_by_id)
@@ -35,7 +30,7 @@ class Recruitment(SeleniumDriver):
         self.element_click(self.save_by_id)
         self.element_click(self.back_by_id)
 
-    def find_recruitment(self, name):
+    def find_candidate(self, name):
         recruitment_list = self.find_elements_list(self.recruitment_list_by_xpath, "xpath")
         index = 1
         for i in range(1,len(recruitment_list)+1):
@@ -44,8 +39,8 @@ class Recruitment(SeleniumDriver):
                 return index
             index += 1
 
-    def delete_recruitment(self, name):
-        index = self.find_recruitment(name)
+    def delete_candidate(self, name):
+        index = self.find_candidate(name)
         self.element_click(self.check_candidate_by_xpath.format(index), "xpath")
         self.element_click(self.delete_by_id)
         self.element_click(self.delete_dialog_by_id)

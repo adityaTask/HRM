@@ -1,6 +1,6 @@
 from base.selenium_driver import SeleniumDriver
 
-class Performance(SeleniumDriver):
+class MyTracker(SeleniumDriver):
     def __init__(self,driver):
         self.driver = driver
         self.performance_tab_by_id = 'menu__Performance'

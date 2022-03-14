@@ -1,7 +1,7 @@
 import pytest
 from configs.config_parser import ConfigParser
 from base.web_driver import WebDriver
-from Pages.login import LoginPage
+from Pages.Login.login import LoginPage
 
 
 @pytest.fixture(scope="class")
