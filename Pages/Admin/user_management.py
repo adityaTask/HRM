@@ -1,3 +1,5 @@
+import time
+
 from base.selenium_driver import SeleniumDriver
 
 
@@ -37,6 +39,7 @@ class UserManagement(SeleniumDriver):
         self.select_from_dropdown(status, self.select_user_status_by_id)
         self.send_keys(password, self.password_by_id)
         self.send_keys(password, self.confirm_password_by_id)
+        time.sleep(2)
         self.element_click(self.save_by_id)
 
     def find_user(self, username):
@@ -46,7 +49,6 @@ class UserManagement(SeleniumDriver):
             for i in range(1, len(users_list) + 1):
                 user_name_from_list = self.get_text(self.username_by_xpath.format(index), "xpath")
                 if username == user_name_from_list:
-                    print("Index of username found",index)
                     return index
                 index += 1
             self.element_click(self.next_page_by_xpath, "xpath")
