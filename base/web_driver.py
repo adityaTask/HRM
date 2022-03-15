@@ -25,6 +25,6 @@ class WebDriver():
                 driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe",options=op)
             driver.maximize_window()
             driver.get(url=self.url)
-            driver.implicitly_wait(10)
+            driver.implicitly_wait(5)
         return driver
 

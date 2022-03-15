@@ -3,6 +3,7 @@ from base.selenium_driver import SeleniumDriver
 
 class Directory(SeleniumDriver):
     def __init__(self,driver):
+        super().__init__(driver)
         self.driver = driver
         self.navigate_to_directory_by_id = 'menu_directory_viewDirectory'
         self.search_employee_directory_by_id = 'searchDirectory_emp_name_empName'
