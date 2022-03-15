@@ -3,8 +3,9 @@ import pytest
 from Pages.Directory.directory import Directory
 from ddt import ddt,data,unpack
 
-@ddt
+
 @pytest.mark.usefixtures("setup")
+@ddt
 class DirectoryTest(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
@@ -12,7 +13,7 @@ class DirectoryTest(unittest.TestCase):
         self.dr = Directory(setup)
 
 
-    @data('Orange Test')
+    @data(['Orange Test'],['Admin A'])
     @unpack
     def test_search_directory(self,emp_name):
         self.dr.navigate_to_directory()
