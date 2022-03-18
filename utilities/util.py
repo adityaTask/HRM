@@ -22,5 +22,3 @@ def get_proj_dir():
             break
     return '\\'.join(root_dir)
 
-
-print(get_proj_dir())
