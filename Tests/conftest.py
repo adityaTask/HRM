@@ -5,20 +5,22 @@ from Pages.Login.login import LoginPage
 
 
 @pytest.fixture(scope="class")
-def setup(request,headless):
+def setup(request, headless):
     config = ConfigParser()
-    wd = WebDriver(url=config.get_url(),head_less=headless)
+    wd = WebDriver(url=config.get_url(), head_less=headless)
     driver = wd.create_driver_instance()
     lp = LoginPage(driver)
     lp.login(username=config.get_username(), password=config.get_password())
-    #not required
+    # not required
     # if request.cls is not None:
     #     request.cls.driver = driver
     yield driver
     driver.quit()
 
+
 def pytest_addoption(parser):
     parser.addoption("--headless")
+
 
 @pytest.fixture(scope="session")
 def headless(request):

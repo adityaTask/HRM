@@ -65,6 +65,13 @@ class SeleniumDriver():
         except Exception as e:
             print(e)
 
+    def get_text_by_element(self, element):
+        try:
+            return element.text
+        except Exception as e:
+            print(e)
+
+
     def select_from_dropdown(self,text,locator, locator_type='id'):
         try:
             by_type = self.get_by_type(locator_type)

@@ -13,7 +13,7 @@ class DirectoryTest(unittest.TestCase):
         self.dr = Directory(setup)
 
 
-    @data(['Orange Test'],['Admin A'])
+    @data(['Orange Test'])
     @unpack
     def test_search_directory(self,emp_name):
         self.dr.navigate_to_directory()

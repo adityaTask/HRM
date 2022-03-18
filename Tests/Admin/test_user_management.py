@@ -13,9 +13,9 @@ class UserTest(unittest.TestCase):
         self.um = UserManagement(setup)
 
 
-    @data(['ESS','Orange Test','orange' + str(time.time()),'Enabled','orange123'])
+    @data(['ESS','Orange Test','orange'+str(time.time()),'Enabled','orange123'])
     @unpack
     def test_user(self,role, emp_name, username, status, password):
         self.um.navigate_to_users()
         self.um.add_users(role,emp_name,username,status,password)
-        self.um.delete_user(username)
+        self.um.find_delete_user(username)

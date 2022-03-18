@@ -6,7 +6,7 @@ from utilities.util import get_csv_data
 from utilities.util import get_proj_dir
 
 
-@pytest.mark.usefixtures('setup')
+@pytest.mark.usefixtures('setup',)
 @ddt
 class LoginTest(unittest.TestCase):
 
@@ -18,6 +18,7 @@ class LoginTest(unittest.TestCase):
     @unpack
     @pytest.mark.run(order=2)
     def test_valid_login(self, username, password):
+        self.lp.logout()
         self.lp.enter_user_name(username)
         self.lp.enter_password(password)
         self.lp.click_login_button()
