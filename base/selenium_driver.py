@@ -89,3 +89,11 @@ class SeleniumDriver():
             action.move_to_element(element).perform()
         except Exception as e:
             print(e)
+
+    def get_attribute(self,attribute,locator, locator_type='id'):
+        try:
+            by_type = self.get_by_type(locator_type)
+            element = self.driver.find_element(by_type, locator)
+            return element.get_attribute(attribute)
+        except Exception as e:
+            print(e)
