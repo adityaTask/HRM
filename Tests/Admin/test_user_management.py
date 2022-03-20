@@ -14,7 +14,7 @@ class UserTest(unittest.TestCase):
         self.um = UserManagement(setup)
 
     now = datetime.datetime.now()
-    @data(['ESS','Orange Test','orange'+str(now.hour)+str(now.min),'Enabled','orange123'])
+    @data(['ESS','Orange Test','zorange'+str(now.hour)+str(now.min),'Enabled','orange123'])
     @unpack
     def test_user(self,role, emp_name, username, status, password):
         self.um.navigate_to_users()
