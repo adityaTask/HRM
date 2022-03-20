@@ -23,8 +23,8 @@ class Common(SeleniumDriver):
         col_index = self.find_column_index_in_table(column_name)
         page_by_top = self.find_elements_list(self.page_top_by_xpath,"xpath")
         if len(page_by_top) > 0:
-            text = self.get_text(self.page_top_by_xpath)
-            rows = text.split(' of ')[-1]
+            text = self.get_text(self.page_top_by_xpath,"xpath")
+            rows = int(text.split(' of ')[-1])
             pages = (rows//50) + 1
         else:
             pages = 1
