@@ -1,3 +1,4 @@
+import datetime
 import time
 
 from Pages.Admin.user_management import UserManagement
@@ -12,8 +13,8 @@ class UserTest(unittest.TestCase):
     def class_setup(self,setup):
         self.um = UserManagement(setup)
 
-
-    @data(['ESS','Orange Test','orange'+str(time.time()),'Enabled','orange123'])
+    now = datetime.datetime.now()
+    @data(['ESS','Orange Test','orange'+str(now.hour)+str(now.min),'Enabled','orange123'])
     @unpack
     def test_user(self,role, emp_name, username, status, password):
         self.um.navigate_to_users()
