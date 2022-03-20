@@ -28,6 +28,7 @@ class Common(SeleniumDriver):
             pages = (rows//50) + 1
         else:
             pages = 1
+        print("\nTotal Pages found ",pages)
         current_page = 1
         while current_page <= pages:
             row_index = 1
