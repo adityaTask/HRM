@@ -14,6 +14,7 @@ def setup(request, headless):
     # not required
     # if request.cls is not None:
     #     request.cls.driver = driver
+
     yield driver
     driver.quit()
 
