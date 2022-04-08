@@ -12,6 +12,7 @@ class MyTrackerTest(unittest.TestCase):
     def class_setup(self, setup):
         self.pf = MyTracker(setup)
 
+    @pytest.mark.skip()
     @data(['Test', 'Positive', 'Positive Comment added'], ['Test', 'Negative', 'Negative Comment added'])
     @unpack
     def test_add_my_tracker(self, log, achievment, comment):

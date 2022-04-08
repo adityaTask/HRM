@@ -5,7 +5,7 @@ from Pages.Login.login import LoginPage
 
 
 @pytest.fixture(scope="class")
-def setup(request, headless):
+def setup(headless):
     config = ConfigParser()
     wd = WebDriver(url=config.get_url(), head_less=headless)
     driver = wd.create_driver_instance()
@@ -14,7 +14,6 @@ def setup(request, headless):
     # not required
     # if request.cls is not None:
     #     request.cls.driver = driver
-
     yield driver
     driver.quit()
 
