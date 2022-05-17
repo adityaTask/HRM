@@ -44,4 +44,3 @@ class Common(SeleniumDriver):
         self.element_click(self.check_row_by_xpath.format(row_index), "xpath")
 
     #this comment was added on dev branch
-    #this comment was added as part of feature1
