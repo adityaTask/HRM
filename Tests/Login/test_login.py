@@ -14,7 +14,7 @@ class LoginTest(unittest.TestCase):
     def class_setup(self, setup):
         self.lp = LoginPage(setup)
 
-    @data(*get_csv_data(get_proj_dir() + '\\HRM\\Tests\\Login\\test_valid_user.csv'))
+    @data(*get_csv_data(get_proj_dir() + '/HRM/Tests/Login/test_valid_user.csv'))
     @unpack
     @pytest.mark.run(order=2)
     def test_valid_login(self, username, password):

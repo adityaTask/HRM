@@ -18,11 +18,12 @@ class WebDriver():
                 op = webdriver.ChromeOptions()
                 op.add_argument('headless')
                 op.add_experimental_option('excludeSwitches', ['enable-logging'])
-                driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe", options=op)
+                driver = webdriver.Chrome( options=op)
+                #executable_path="../utilities/chromedriver.exe",
             else:
                 op = webdriver.ChromeOptions()
                 op.add_experimental_option('excludeSwitches', ['enable-logging'])
-                driver = webdriver.Chrome(executable_path="../utilities/chromedriver.exe",options=op)
+                driver = webdriver.Chrome(options=op)
             driver.maximize_window()
             driver.get(url=self.url)
             driver.implicitly_wait(5)

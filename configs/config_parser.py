@@ -16,3 +16,6 @@ class ConfigParser():
 
     def get_password(self):
         return self.config['test_chrome']['password']
+
+cc = ConfigParser()
+print(cc.get_url())

@@ -15,10 +15,11 @@ def get_csv_data(file):
 def get_proj_dir():
     cur_dir = os.path.abspath(os.curdir)
     root_dir = []
-    for i in cur_dir.split('\\'):
+    for i in cur_dir.split('/'):
         if i !='HRM':
             root_dir.append(i)
         else:
             break
-    return '\\'.join(root_dir)
+    return '/'.join(root_dir)
+
 

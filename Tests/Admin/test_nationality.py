@@ -13,7 +13,7 @@ class NationalityTest(unittest.TestCase):
     def class_setup(self,setup):
         self.nt = Nationalities(setup)
 
-    @data(*get_csv_data(get_proj_dir() + '\\HRM\\Tests\\Admin\\test_nationalities.csv'))
+    @data(*get_csv_data(get_proj_dir() + '/HRM/Tests/Admin/test_nationalities.csv'))
     @unpack
     def test_nationalities(self,nationality):
         self.nt.navigate_to_nationalities()
