@@ -42,3 +42,6 @@ class Common(SeleniumDriver):
     def find_and_check_row_in_table(self, column_name, value):
         row_index = self.find_row_index_in_table(column_name, value)
         self.element_click(self.check_row_by_xpath.format(row_index), "xpath")
+
+    #this comment was added on dev branch
+    #this comment was added as part of feature1
